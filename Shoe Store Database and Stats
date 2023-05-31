@@ -1,0 +1,28 @@
+--Create a shoe store database
+
+CREATE table shoes (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, activity TEXT, stock INTEGER);
+
+INSERT INTO shoes VALUES (1, 'Nike Pegasus', 130, 'running', 10);
+INSERT INTO shoes VALUES (2, 'Nike Alphafly', 275, 'running', 19);
+INSERT INTO shoes VALUES (3, 'Nike Air Max', 160, 'lifestyle', 20);
+INSERT INTO shoes VALUES (4, 'Nike Air Force 1', 110, 'lifestyle', 16);
+INSERT INTO shoes VALUES (5, 'Nike Metcon', 120, 'weight training', 14);
+INSERT INTO shoes VALUES (6, 'Adidas Ultraboost', 190, 'running', 15);
+INSERT INTO shoes VALUES (7, 'Adidas Ultra 4D', 220, 'running', 10);
+INSERT INTO shoes VALUES (8, 'Adidas Gazelle', 100, 'lifestyle', 18);
+INSERT INTO shoes VALUES (9, 'Adidas Stan Smith', 80, 'lifestyle', 20);
+INSERT INTO shoes VALUES (10, 'Adidas Powerlift 5', 130, 'weight training', 10);
+INSERT INTO shoes VALUES (11, 'Reebok Glide', 70, 'lifestyle', 10);
+INSERT INTO shoes VALUES (12, 'Reebok Nano X3', 140, 'weight training', 11);
+INSERT INTO shoes VALUES (13, 'Reebok Classic', 80, 'lifestyle', 25);
+INSERT INTO shoes VALUES (14, 'New Balance 550', 120, 'lifestyle', 17);
+INSERT INTO shoes VALUES (15, 'New Balance Fresh Foam', 130, 'running', 7);
+
+--display the database ordered by price.
+SELECT * FROM shoes ORDER BY price asc;
+
+--what is the average price of running shoes?
+SELECT avg(price) "average running shoe price" FROM shoes where activity='running';
+
+--what 5 shoes have the most stock?
+SELECT name, activity, stock FROM shoes ORDER BY stock desc limit 5;
